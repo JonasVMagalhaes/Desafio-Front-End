@@ -1,27 +1,81 @@
-# ChallengeFrontEnd
+# Controle de itens
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+- [Controle de itens](#controle-de-itens).
+- [Sobre o projeto](#sobre-o-projeto)
+- [Tecnologias](#tecnologias)
+- [Estrutura de pastas](#estrutura-de-pastas)
+    - [Pastas](#pastas)
+      - [components](#components)
+      - [interfaces](#interfaces)
+      - [modules](#modules)
+      - [pages](#pages)
+      - [pipes](#pipes)
+      - [services](#services)
+- [Rodando a aplicação](#rodando-a-aplicação)
+- [Licença](#licença)
+- [Contato](#contato)
+### Sobre o projeto
+Este projeto vista a criação, edição e manutenção de itens variádos sem necessidade de armazenagem em bancos de dados. Para isto, é utilizado o localStorage do próprio navegador realizando a persistência de dados.
+### Tecnologias
+Este projeto foi criado utilizando as seguintes tecnologias.
 
-## Development server
+- Angular
+- Typescript
+- PrimeNg
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Estrutura de pastas
+``` 
+├───app
+│   ├───components
+│   │   ├───dialog
+│   │   ├───side-menu
+│   │   ├───table-itens
+│   │   ├───toast
+│   │   └───toolbar
+│   ├───interfaces
+│   ├───modules
+│   │   └───prime-ng
+│   ├───pages
+│   │   ├───itens
+│   │   └───register
+│   ├───pipes
+│   └───services
+├───assets
+└───environments
+```
 
-## Code scaffolding
+##### Pastas
+###### components
+A pasta componentes é responsável por armazenar todos os componentes visuais reaproitáveis. Assim, é possível usá-los em qualquer parte do código, bastando declará-los nos módulos dos componentes que o chamarem.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+###### interfaces
+A pasta interfaces é responsável por armazenar as interfaces e os types para serem utilizados no código. Por padrão, as interfaces iniciam com "I" seguido do nome da interface e os types começam com "T" seguido do nome do type.
 
-## Build
+###### modules
+A pasta modules é responsável por armazenar os módulos de controle. Os quais podem exportar vários elementos para um mesmo componente, deste modo, não é necessário ficar importando a cada um individualmente em cada página em qual foi solicitado.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+###### pages
+A pasta pages é responsável por armazenas as telas que serão apresentadas no navegador e que serão informadas no routing da aplicação.
 
-## Running unit tests
+###### pipes
+A pasta pipes segue para armazenar todos os pipes criados para centralizar a localização deles.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+###### services
+A pasta services armazena todos os services de uso global, aos quais poderão ser chamados em um ou mais componentes.
 
-## Running end-to-end tests
+### Rodando a aplicação
+Para rodar a aplicação, é necessário ter instalado no computador as seguintes tecnologias.
+- Angular
+- Node (Para instalação das dependências)
+  
+1. Na raíz da aplicação, rode o comando `$ npm run install`
+2. Após as dependências serem instaladas, rode o comando `$ npm run start`
+   
+Você será direcionado para a tela principal da aplicação "itens". A partir daí, você consegue usar a aplicação em sua totalidade.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Licença
+Distribuído sob a licença MIT.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Contato
+[Linkedin](https://www.linkedin.com/in/jonas-magalh%C3%A3es-19b974134/)
+[Github](https://github.com/JonasVMagalhaes)
