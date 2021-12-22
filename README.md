@@ -79,3 +79,6 @@ Distribuído sob a licença MIT.
 ### Contato
 [Linkedin](https://www.linkedin.com/in/jonas-magalh%C3%A3es-19b974134/)
 [Github](https://github.com/JonasVMagalhaes)
+
+### Link para visualização do projeto
+[Projeto](https://controleitens-8277b.web.app/itens)
