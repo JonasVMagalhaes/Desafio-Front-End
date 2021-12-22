@@ -1,0 +1,46 @@
+.div-dropdown {
+    width: 100%;
+}
+
+p-inputNumber {
+    width: 100%;
+}
+
+.label-perishable {
+    margin-right: 16px;
+}
+
+.container {
+    display: grid;
+    height: calc(100vh - 100px);
+    place-items: center;
+    width: 100%;
+}
+
+.box-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    p-button {
+        margin-left: 16px;
+    }
+}
+
+#box-perishable {
+    display: flex;
+    align-items: center;
+}
+
+.box-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 600px;
+    max-width: 600px;
+    height: 100%;
+    width: 100%;
+}
+
+
+

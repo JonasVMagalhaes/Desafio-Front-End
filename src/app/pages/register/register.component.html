@@ -1,0 +1,124 @@
+<div class="container">
+  <h1>Adicionar novo item</h1>
+
+  <div class="box-form">
+    <div>
+      <div class="p-field margin-top-8">
+        <label for="name">Nome do item</label>
+        <input
+          id="name"
+          maxlength="50"
+          name="iten.name"
+          pInputText
+          type="text"
+          [(ngModel)]="iten.name"
+          [style]="{ minWidth: '100%' }"
+        />
+      </div>
+
+      <div class="div-dropdown margin-top-8">
+        <label for="measurements">Unidade de medida</label>
+        <p-dropdown
+          inputId="measurements"
+          name="measurements"
+          optionLabel="name"
+          placeholder="Unidade de medida"
+          (onChange)="setPrice($event.value)"
+          [(ngModel)]="measurement"
+          [options]="measurements"
+          [style]="{ minWidth: '100%' }"
+        ></p-dropdown>
+      </div>
+
+      <div class="margin-top-8">
+        <label for="minmaxfraction">Quantidade</label>
+        <div class="p-inputgroup">
+          <p-inputNumber
+            name="iten.quantity"
+            inputId="minmaxfraction"
+            mode="decimal"
+            *ngIf="
+              measurement.code === 'Litro' || measurement?.code === 'Quilograma'
+            "
+            [(ngModel)]="iten.quantity"
+            [minFractionDigits]="3"
+            [maxFractionDigits]="3"
+            [style]="{ minWidth: '100%' }"
+          ></p-inputNumber>
+          <p-inputNumber
+            name="iten.quantity"
+            inputId="integeronly"
+            *ngIf="measurement.code === 'Unidade'"
+            [(ngModel)]="iten.quantity"
+            [style]="{ minWidth: '100%' }"
+          ></p-inputNumber>
+          <span class="p-inputgroup-addon">
+            <span>{{ measurement.code | measurement }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="p-field margin-top-8">
+        <label for="price">Preço</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <span>R$</span>
+          </span>
+          <p-inputNumber
+            inputId="price"
+            mode="decimal"
+            [(ngModel)]="iten.price"
+            [minFractionDigits]="2"
+            [maxFractionDigits]="2"
+            [style]="{ minWidth: '100%' }"
+          ></p-inputNumber>
+        </div>
+      </div>
+
+      <div id="box-perishable" class="p-field-checkbox margin-top-8">
+        <label class="label-perishable" for="binary">Perecível</label>
+        <p-toggleButton [(ngModel)]="iten.perishable" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
+      </div>
+
+      <div *ngIf="iten.perishable" class="margin-top-8">
+        <label for="price">Data de validade</label>
+        <p-calendar
+          [showIcon]="true"
+          inputId="icon"
+          [style]="{ minWidth: '100%' }"
+          [(ngModel)]="iten.dateVality"
+          name="iten.dateVality"
+          (onSelect)="verifyVality()"
+          [disabled]="!iten.perishable"
+        ></p-calendar>
+        <small *ngIf="validates.perishable" id="username2-help" class="p-error">{{ validates.perishable }}</small>
+      </div>
+
+      <div class="margin-top-8">
+        <label for="price">Data de fabricação</label>
+        <p-calendar
+          *ngIf="iten.perishable"
+          [showIcon]="true"
+          inputId="icon"
+          [style]="{ minWidth: '100%' }"
+          [(ngModel)]="iten.dateManufacturing"
+          name="iten.dateManufacturing"
+          
+        ></p-calendar>
+        <p-calendar
+          *ngIf="!iten.perishable"
+          [showIcon]="true"
+          inputId="icon"
+          [style]="{ minWidth: '100%' }"
+          [(ngModel)]="iten.dateManufacturing"
+          name="iten.dateManufacturing"
+        ></p-calendar>
+      </div>
+    </div>
+
+    <div class="box-buttons margin-top-8">
+      <p-button label="Cancelar" (click)="cancel()"></p-button>
+      <p-button label="Salvar" (click)="saveIten()"></p-button>
+    </div>
+  </div>
+</div>

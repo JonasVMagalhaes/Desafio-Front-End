@@ -1,0 +1,27 @@
+<p-sidebar [(visible)]="configSideMenu.display">
+  <div class="logo-collab">
+    <img src="../../../assets/logo-collab.png" width="200px">
+  </div>
+  <ul>
+    <li
+      class="cursor-pointer"
+      routerLink="/itens"
+      routerLinkActive="linkActive"
+      (click)="showHideSideMenu()"
+    >
+      ITENS
+    </li>
+    <p-divider></p-divider>
+    <li
+      class="cursor-pointer"
+      routerLink="/register"
+      routerLinkActive="linkActive"
+      (click)="showHideSideMenu()"
+    >
+      REGISTER
+    </li>
+    <p-divider></p-divider>
+  </ul>
+
+  <span class="credit">Dev: Jonas Magalhães</span>
+</p-sidebar>

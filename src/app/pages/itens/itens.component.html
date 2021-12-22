@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Ítens cadastrados</h1>
+  <p-table class="" [value]="itens" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Unidade de medida</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+        <th>Perecível</th>
+        <th>Data de validade</th>
+        <th>Data de fabricação</th>
+        <th>Configurações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-iten>
+      <tr>
+        <td>{{ iten.name }}</td>
+        <td>{{ iten.measurement }}</td>
+        <td>{{ iten.quantity }}</td>
+        <td>{{ iten.price }}</td>
+        <td>
+          <p-toggleButton [(ngModel)]="iten.perishable" [disabled]=true onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
+        </td>
+        <td>{{ iten.dateVality | Pdate }}</td>
+        <td>{{ iten.dateManufacturing | Pdate }}</td>
+        <th class="config-icons">
+          <div [routerLink]="['/edit', iten.id]" class="cursor-pointer">
+            <i class="pi pi-pencil"></i>
+          </div>
+          <div (click)="removeIten(iten.id)" class="cursor-pointer">
+            <i class="pi pi-times"></i>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div class="container-button">
+    <p-button label="Adicionar novo ítem" routerLink="/register"></p-button>
+  </div>
+</div>

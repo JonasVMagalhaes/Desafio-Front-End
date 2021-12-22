@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+p-table {
+  min-width: 900px;
+}
+
+.config-icons {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: space-evenly;
+  width: 140px;
+}
+
+.container-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  width: 100%;
+}
